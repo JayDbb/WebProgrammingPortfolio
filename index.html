@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Home</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --primary: #1E2D2F;
+            --second: #DDF8E8;
+            --teri: #C57B57;
+        }
+        
+        ::selection{
+            color: var(--primary);
+            background-color: var(--second);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: var(--primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--second);
+            border-radius: 4px;
+        }
+
+        @keyframes rotate {
+            0%,100%{
+                rotate: 0deg;
+                border-radius: 8px;
+            }
+            50%{
+                rotate: 180deg;
+                border-radius: 0px;
+                transform: scale(0);
+            }
+        }
+
+        /* Import Custom Font */
+        @font-face {
+            font-family: 'EuclidCircularA-Bold';
+            src: url('assets/Euclid Circular A Bold.ttf');
+        }
+
+        body {
+            font-family: 'EuclidCircularA-Bold';
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        li {
+            margin-bottom: 1.5vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        
+
+        a {
+            text-decoration: none;
+            color: var(--second);
+            transition: all .5s;
+        }
+
+        a:hover {
+            cursor: pointer;
+            color: var(--teri);
+            transition: all .5s;
+        }
+
+        /* Nav Styling */
+
+        #links {
+            position: relative;
+            z-index: 3;
+            list-style: none;
+            flex-direction: column;
+            position: fixed;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin-top: -50vh;
+            left: 83%;
+            justify-content: end;
+        }
+
+        .locate {
+            margin-top: 10px;
+        }
+
+        .right-arrow {
+            margin-right: 10px;
+        }
+
+        #social {
+            margin-top: 20px;
+        }
+
+        .link-div {
+            margin-top: 10px;
+        }
+
+        .link-img {
+            margin-right: 10px;
+        }
+
+
+        .navRedirect {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .navRedirect>img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Style For Hero  */
+        #me-info {
+            margin-top: 30vh;
+            margin-left: 10vw;
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        #waz-here {
+            display: flex;
+            font-size: 7vh;
+            margin-bottom: -15px;
+            color: var(--second);
+            margin-right: 25vw;
+
+        }
+
+        #age {
+            margin-right: 30vw;
+        }
+
+        #bday {
+            font-size: 5vh;
+            margin-bottom: -15px;
+            transition: text-shadow .5s;
+            margin-right: 30vw;
+
+        }
+
+        #intro-text {
+            font-size: 3vh;
+            margin-right: 40vw;
+            margin-top: -2vh;
+            word-wrap: normal;
+            line-height: 2em;
+            text-align: justify;
+
+        }
+
+        #myImg {
+            border-radius: 10px;
+            padding: 0px;
+            margin: 0px;
+            width: 350px;
+            height: 350px;
+            object-fit:cover;
+        }
+
+        #imgContainer {
+            position: absolute;
+            margin-left: 45%;
+            margin-top: 2%;
+            transition: all 1.2s;
+            padding: 0;
+            height: 350px;
+            z-index: 2;
+        }
+
+        #imgContainer:hover {
+            transform: translateY(-4%);
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            box-shadow: 0px 15px var(--teri);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+
+        #heroTextContainer {
+            margin-right: 10%;
+            padding: 0px;
+            display: flex;
+            position: relative;
+            z-index: 1;
+        
+        }
+
+        #rotating-square {
+            background-color: var(--second);
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 42%;
+            bottom:45%;
+            animation: rotate 3s ease-in-out infinite;
+        }
+
+        /* About Me */
+        #container-3 {
+            margin-top: 10vh;
+            margin-left: 10vw;
+        }
+
+        #about-h1 {
+            color: var(--second);
+            font-size: 5vh;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .line {
+            background-color: var(--second);
+            height: 2px;
+            width: 25vw;
+            margin-top: 3.5vh;
+            margin-left: 10px;
+            border-radius: 8px;
+        }
+
+        #about-text {
+            width: 40vw;
+        }
+
+        #about-text>p {
+            font-size: 3vh;
+            margin-top: -2vh;
+            word-wrap: normal;
+            line-height: 2em;
+            text-align: justify;
+
+        }
+
+        #about-inner-container {
+            display: flex;
+            position: relative;
+            z-index: 1;
+        }
+
+        #likes-dislike {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            margin-left: 5vw;
+        }
+
+        #likes-dislike>li {
+            font-size: 3vh;
+        }
+
+        #likes-dislike>li:nth-child(1) {
+            color: var(--second);
+        }
+
+        #likes-dislike>li:nth-child(7) {
+            color: var(--second);
+        }
+
+        #langs-text {
+            font-size: 3vh;
+            margin-top: 2vh;
+            word-wrap: normal;
+            text-align: justify;
+        }
+
+        #langs {
+            display: flex;
+        }
+
+        .langs-inner-contain>li {
+            color: var(--second);
+            list-style: circle;
+
+        }
+
+        /* Knowledge Base */
+        #container-4{
+            margin-left: 10vw;
+        }
+
+        /* Animated Squares */
+
+        @keyframes floatingSpin {
+            0%{
+                opacity: 0;
+                rotate: 0deg;
+                bottom: 0vh;
+
+            }
+            10%{
+                opacity: .6;
+            }
+            90%{
+                opacity: .6;
+            }
+            100%{
+                opacity: 0;
+                rotate: 360deg;
+                bottom: 250vh;
+            }
+
+        }
+
+        .animated-bg-square{
+            width: 20px ;
+            height: 20px ;
+            background-color: var(--second);
+            position: absolute;
+            list-style: none;
+            border-radius: 8px;
+            animation: floatingSpin 3s ease-in-out infinite both;
+            
+        }
+
+        #animated-square-container{
+            height: 100vh;
+            position: absolute;
+            top:100vh;
+            display: flex;
+            margin-top: 30vh;
+            align-items: end;
+            z-index: 0;
+        }
+        
+        #animated-square-container > li{
+            margin-bottom: 0px;
+
+        }
+
+        .animated-bg-square:nth-child(1){
+            margin-left: 0vw;
+            width: 100px;
+            height: 100px;
+            animation-delay: 1s;
+            animation-duration: 5s;
+
+        }
+
+        .animated-bg-square:nth-child(2){
+            margin-left: 80vw;
+            width: 120px;
+            height: 120px;
+            animation-delay: 3s;
+            animation-duration: 6s;
+
+
+        }
+
+        .animated-bg-square:nth-child(3){
+            margin-left: 60vw;
+            width: 10px;
+            height: 10px;
+            animation-delay: 5s;
+            animation-duration: 3s;
+            border-radius: 2px;
+
+
+        }
+
+        .animated-bg-square:nth-child(4){
+            margin-left: 40vw;
+            width: 200px;
+            height: 200px;
+            animation-delay: 3s;
+            animation-duration: 9s;
+
+        }
+
+        .animated-bg-square:nth-child(5){
+            margin-left: 20vw;
+            width: 70px;
+            height: 70px;
+            animation-delay: 8s;
+            animation-duration: 4s;
+            
+        }
+
+        .animated-bg-square:nth-child(6){
+            margin-left: 10vw;
+            width: 30px;
+            height: 30px;
+            animation-delay: 6s;
+            animation-duration: 3s;
+
+        }
+        
+    </style>
+
+    <!-- Animated Squares -->
+    <ul id="animated-square-container">
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+    </ul>
+
+    <!-- Nav Bar -->
+    <ul id="links">
+        <div id="locaters">
+            <div class="locate">
+                <a href="/index.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">home</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/personality.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">personality</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/professional.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">professional</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/personalDev.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">personal development</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/storyboard.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">storyboard</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/references.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">references</li>
+                </a>
+            </div>
+        </div>
+        <div id="social">
+            <div class="link-div">
+                <a class="navRedirect" href="https://vsco.co/justiinb/gallery" target="_blank">
+                    <img class='link-img' id='vsco-img' src='assets/vsco.png'>
+                    <li id="vsco" class='link-text' id="vsco-text">vsco</li>
+                </a>
+            </div>
+            <div class="link-div">
+                <a class="navRedirect" href="#">
+                    <img class='link-img' src="assets/snapchat.png">
+                    <li class='link-text'>snapchat</li>
+                </a>
+            </div>
+            <div class="link-div">
+                <a class="navRedirect" href="https://www.instagram.com/justinn.tm/" target="_blank">
+                    <img class='link-img' src='assets/instagram.png'>
+                    <li class='link-text'>instagram</li>
+                </a>
+            </div>
+        </div>
+    </ul>
+
+    <!-- Hero Page -->
+    <section id="me-info">
+        <div id="heroTextContainer">
+            <div>
+
+                <h1 id="waz-here">Justin Waz Here!</h1>
+                <h2 id="bday">born on <<span style="color:#DDF8E8">13</span>/<span style="color:#DDF8E8">08</span>/<span
+                            style="color:#DDF8E8">2005</span>></h2>
+                <h1 id="age">that makes me 18 right now.</h1>
+                <br>
+                <p id="intro-text"> I am an aspiring software engineer, born and raised in Jamaica. I do graphic design
+                    and
+                    photography all while vibing to my precious music. </p>
+            </div>
+
+            <div id="rotating-square"></div>
+        </div>
+        <div id="imgContainer">
+            <a href="mailto:justin670brown@gmail.com?subject=Hey Justin!">
+                <img id="myImg" src="assets/me.jpg" />
+            </a>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="container-3">
+        <h1 id="about-h1">about me :)<span class="line"></span></h1>
+
+        <div id="about-inner-container">
+
+            <div>
+                <div id="about-text">
+                    <p>My name is Justin Brown. I am a former student of <a id="wbs" href="https://wolmers.org"
+                            target="_blank">Wolmer's Boy's HighSchool</a> and I currently attend the <a id="tec"
+                            href="http://www.utechjamaica.edu.jm/" target="_blank">University of Technology</a> studying
+                        Computer Science. I am unsure about what aspect of development is for me but I do enjoy AI and
+                        web
+                        development. However, I am currently working with Sagicor Innovation Lab part-time. </p>
+                </div>
+            </div>
+
+            <div>
+                <ul id="likes-dislike">
+                    <li>Likes</li>
+                    <li>Photography</li>
+                    <li>Graphic Design</li>
+                    <li>Programming</li>
+                    <li>Music</li>
+                    <br>
+                    <li>Dislike</li>
+                    <li>Avocado.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Knowledge Base -->
+    <section id="container-4">
+        <h1 id="about-h1">knowledge base<span class="line" style="width: 20vw;"></span></h1>
+
+        <div id="about-inner-container">
+
+            <div>
+                <div id="about-text">
+                    <p>I have worked on many projects. One of the most notable ones being <a href="https://rankedout.com" target="_blank">RankedOut</a>. Throughout my 4 years of programming experience I have learned and used:</p>
+                </div>
+                <div id="langs-text">
+                    <p id="lang-abt">These are the languages I have worked with before:</p>
+
+                    <ul id="langs">
+                        <div class="langs-inner-contain">
+
+                            <li>Python</li>
+                            <li>C/C++</li>
+                            <li>Java</li>
+                            <li>Javascript (React & Vanilla)</li>
+                        </div>
+                        <div class="langs-inner-contain">
+                            <li>HTML/CSS</li>
+                            <li>React-Native</li>
+                            <li>Typescript</li>
+
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+</body>
+
+</html>

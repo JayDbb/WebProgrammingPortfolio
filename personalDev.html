@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Personal Development</title>
+</head>
+
+<body>
+    <style>
+        :root {
+            --primary: #1E2D2F;
+            --second: #DDF8E8;
+            --teri: #C57B57;
+        }
+
+        ::selection {
+            color: var(--primary);
+            background-color: var(--second);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: var(--primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--second);
+            border-radius: 4px;
+        }
+
+        @keyframes rotate {
+
+            0%,
+            100% {
+                rotate: 0deg;
+                border-radius: 8px;
+            }
+
+            50% {
+                rotate: 180deg;
+                border-radius: 0px;
+                transform: scale(0);
+            }
+        }
+
+        /* Import Custom Font */
+        @font-face {
+            font-family: 'EuclidCircularA-Bold';
+            src: url('assets/Euclid Circular A Bold.ttf');
+        }
+
+        body {
+            font-family: 'EuclidCircularA-Bold';
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        li {
+            margin-bottom: 1.5vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        #contentContainer > ul{
+            list-style: circle;
+            font-size: 3vh;
+        }
+
+        img {
+            height: 500px;
+            width: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--second);
+            transition: all .5s;
+        }
+
+        a:hover {
+            cursor: pointer;
+            color: var(--teri);
+            transition: all .5s;
+        }
+
+        h1{
+            font-size: 2.1vw;
+            color: var(--second);
+            margin-right: 10vw;
+        }
+
+        h2{
+            font-size: 1.6vw;
+            color: var(--second);
+            margin-bottom: 35px;
+        }
+
+        p{
+            font-size: 1.4vw;
+            margin-top: -2vh;
+            word-wrap: normal;
+            line-height: 2em;
+            text-align: justify;
+            position: relative;
+            z-index: 1;
+        }
+        /* Nav Styling */
+
+        #links {
+            position: relative;
+            z-index: 3;
+            list-style: none;
+            flex-direction: column;
+            position: fixed;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin-top: -50vh;
+            left: 83%;
+            justify-content: end;
+        }
+
+        .locate {
+            margin-top: 10px;
+        }
+
+        .right-arrow {
+            margin-right: 10px;
+        }
+
+        #social {
+            margin-top: 20px;
+        }
+
+        .link-div {
+            margin-top: 10px;
+        }
+
+        .link-img {
+            margin-right: 10px;
+        }
+
+
+        .navRedirect {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .navRedirect>img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Animated Squares */
+
+        @keyframes floatingSpin {
+            0% {
+                opacity: 0;
+                rotate: 0deg;
+                bottom: 0vh;
+
+            }
+
+            10% {
+                opacity: .6;
+            }
+
+            90% {
+                opacity: .6;
+            }
+
+            100% {
+                opacity: 0;
+                rotate: 360deg;
+                bottom: 250vh;
+            }
+
+        }
+
+        .animated-bg-square {
+            width: 20px;
+            height: 20px;
+            background-color: var(--second);
+            position: absolute;
+            list-style: none;
+            border-radius: 8px;
+            animation: floatingSpin 3s ease-in-out infinite both;
+
+        }
+
+        #animated-square-container {
+            height: 100vh;
+            position: absolute;
+            top: 100vh;
+            display: flex;
+            margin-top: 30vh;
+            align-items: end;
+            z-index: 0;
+        }
+
+        #animated-square-container>li {
+            margin-bottom: 0px;
+
+        }
+
+        .animated-bg-square:nth-child(1) {
+            margin-left: 0vw;
+            width: 100px;
+            height: 100px;
+            animation-delay: 1s;
+            animation-duration: 5s;
+
+        }
+
+        .animated-bg-square:nth-child(2) {
+            margin-left: 80vw;
+            width: 120px;
+            height: 120px;
+            animation-delay: 3s;
+            animation-duration: 6s;
+
+
+        }
+
+        .animated-bg-square:nth-child(3) {
+            margin-left: 60vw;
+            width: 10px;
+            height: 10px;
+            animation-delay: 5s;
+            animation-duration: 3s;
+            border-radius: 2px;
+
+
+        }
+
+        .animated-bg-square:nth-child(4) {
+            margin-left: 40vw;
+            width: 200px;
+            height: 200px;
+            animation-delay: 3s;
+            animation-duration: 9s;
+
+        }
+
+        .animated-bg-square:nth-child(5) {
+            margin-left: 20vw;
+            width: 70px;
+            height: 70px;
+            animation-delay: 8s;
+            animation-duration: 4s;
+
+        }
+
+        .animated-bg-square:nth-child(6) {
+            margin-left: 10vw;
+            width: 30px;
+            height: 30px;
+            animation-delay: 6s;
+            animation-duration: 3s;
+
+        }
+
+        /* Hero */
+        #me-info {
+            margin-top: 30vh;
+            margin-left: 13vw;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        #waz-here {
+            display: flex;
+            font-size: 7vh;
+            margin-top: -0px;
+            margin-bottom: 20px;
+            color: var(--second);
+            margin-right: 35vw;
+
+        }
+
+        #heroTextContainer {
+            margin-right: 10%;
+            padding: 0px;
+            display: flex;
+            position: relative;
+            z-index: 1;
+
+        }
+
+        .line {
+            background-color: var(--second);
+            height: 2px;
+            width: 80%;
+            margin-top: 2.5vh;
+            margin-left: 10px;
+            border-radius: 8px;
+        }
+
+        .chp-H {
+            color: var(--second);
+            display: flex;
+            flex-direction: row;
+        }
+
+        #contentContainer{
+            width: 43vw;
+        }
+    </style>
+
+    <!-- Animated Squares -->
+    <ul id="animated-square-container">
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+    </ul>
+
+    <!-- Nav Bar -->
+    <ul id="links">
+        <div id="locaters">
+            <div class="locate">
+                <a href="/index.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">home</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/personality.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">personality</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/professional.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">professional</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/personalDev.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">personal development</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/storyboard.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">storyboard</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/references.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">references</li>
+                </a>
+            </div>
+        </div>
+        <div id="social">
+            <div class="link-div">
+                <a class="navRedirect" href="https://vsco.co/justiinb/gallery" target="_blank">
+                    <img class='link-img' id='vsco-img' src='assets/vsco.png'>
+                    <li id="vsco" class='link-text' id="vsco-text">vsco</li>
+                </a>
+            </div>
+            <div class="link-div">
+                <a class="navRedirect" href="#">
+                    <img class='link-img' src="assets/snapchat.png">
+                    <li class='link-text'>snapchat</li>
+                </a>
+            </div>
+            <div class="link-div">
+                <a class="navRedirect" href="https://www.instagram.com/justinn.tm/" target="_blank">
+                    <img class='link-img' src='assets/instagram.png'>
+                    <li class='link-text'>instagram</li>
+                </a>
+            </div>
+        </div>
+    </ul>
+
+    <!-- Hero -->
+    <section id="me-info">
+        <div id="heroTextContainer">
+            <h1 id="waz-here">My Personal Development.</h1>
+        </div>
+        <div id="contentContainer">
+
+            <h1>12 Pillars Summary</h1>
+            <h2 class="chp-H">Chapter 4 <div class="line"></div></h2>
+            <p>This chapter speaks on the concept of <span style="color: #1E2D2F;background-color: #DDF8E8;">goal setting.</span> This means indentifying the activities you would like to accomplish before you die. After identifying the goal you should write it down. Categorize it as:</p>
+            <ul>
+                <li>Long Ranged</li>
+                <li>Mid Ranged</li>
+                <li>Short Ranged</li>
+            </ul>
+            <p style="margin-top: 1.5vh;">However, this chapter says that the achievement of the goal is not the only thing gained, but rather the person you become while on the journey to achieve the goal. </p>
+
+            <h2>Applied To My Life</h2>
+            <p>This chapter can be applied to my life by me creating goals for school and my future self.</p>
+        </div>
+        <div id="contentContainer">
+            <h2 class="chp-H">Chapter 5 <div class="line"></div></h2>
+            <p>This chapter speaks on <span style="color: #1E2D2F;background-color: #DDF8E8;">time management.</span> It suggests that you must make time for things of importance, take control of the days that pass and don't allow the day to control you. Along with that, it says that you shouldn't spend all your time with things of urgency but bare in mind things of importance as well.</p>
+            <h2>Applied To My Life</h2>
+            <p>This chapter can be applied to my life by me creating schedules for myself so I can have a balance between all of my responsibilities.</p>
+
+        </div>
+
+        <div id="contentContainer">
+            <h2 class="chp-H">Chapter 6 <div class="line"></div></h2>
+            <p>This chapter speaks on the impact of <span style="color: #1E2D2F;background-color: #DDF8E8;">the people you associate with.</span> It advocates for the popular phrase "Show me your friends and I'll show you your future". People with poor attitudes will lead you to have a poor and lethargic attitude and the same is true for positive people. This is why winners involve themselves with other winners. Futhermore, the chapter teaches a practice for when meeting new people. Determine whether you should: </p>
+            <ul>
+                <li>Disassociate</li>
+                <li>Limit Association</li>
+                <li>Expand Association</li>
+            </ul>  
+            <p style="margin-top: 1.5vh;">You would determine which to do based on whether the person has traits that you would like to pick up from them.</p>    
+            <h2>Applied To My Life</h2>
+            <p>This chapter can be applied to my life by me disassociating or limiting association with some of my current friends as their lifestyle does not match what I envision for my future.</p>
+   
+        </div>
+
+        <div id="contentContainer">
+            <h2 class="chp-H">Chapter 7 <div class="line"></div></h2>
+            <p>This chapter speaks on <span style="color: #1E2D2F;background-color: #DDF8E8;">life long learning.</span> This chapter says that learning does not end after traditional school, as self-leargning will lead you to greater path. It states 3 ways a person can continue to learn:</p>
+            <ul>
+                <li>Books</li>
+                <li>Other Successful People</li>
+                <li>Self Experience</li>
+            </ul> 
+            <p style="margin-top: 1.5vh;">This chapter, however, mainly advocated for books.</p>       
+            <h2>Applied To My Life</h2>
+            <p>This chapter can be applied to my life by me reading more books than I currently do so that I can gain knowledge from those who have experienced what I am experiencing, instead of me having to figure it out on my own.</p>
+
+            <h1>
+                My Skills
+            </h1>
+            <ul>
+                <li>Research</li>
+                <li>Time Management</li>
+                <li>Creative Thinking</li>
+            </ul> 
+            <h2>I am studying for a Bsc. Science in Computing.</h2>
+        </div>
+
+    </section>
+
+</body>
+
+</html>

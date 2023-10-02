@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+                :root {
+            --primary: #1E2D2F;
+            --second: #DDF8E8;
+            --teri: #C57B57;
+        }
+
+        ::selection {
+            color: var(--primary);
+            background-color: var(--second);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: var(--primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--second);
+            border-radius: 4px;
+        }
+
+        @keyframes rotate {
+
+            0%,
+            100% {
+                rotate: 0deg;
+                border-radius: 8px;
+            }
+
+            50% {
+                rotate: 180deg;
+                border-radius: 0px;
+                transform: scale(0);
+            }
+        }
+
+        /* Import Custom Font */
+        @font-face {
+            font-family: 'EuclidCircularA-Bold';
+            src: url('assets/Euclid Circular A Bold.ttf');
+        }
+
+        body {
+            font-family: 'EuclidCircularA-Bold';
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        li {
+            margin-bottom: 1.5vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        img {
+            height: 500px;
+            width: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--second);
+            transition: all .5s;
+        }
+
+        a:hover {
+            cursor: pointer;
+            color: var(--teri);
+            transition: all .5s;
+        }
+
+        p{
+            font-size: 3vh;
+            margin-top: -2vh;
+            word-wrap: normal;
+            line-height: 2em;
+            text-align: justify;
+        }
+
+
+        h1 {
+            font-size: 2.1vw;
+            color: var(--second);
+            margin-right: 10vw;
+        }
+
+        h2 {
+            font-size: 1.6vw;
+            color: var(--second);
+            margin-bottom: 35px;
+        }
+
+        /* Nav Styling */
+
+        #links {
+            position: relative;
+            z-index: 3;
+            list-style: none;
+            flex-direction: column;
+            position: fixed;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin-top: -50vh;
+            left: 83%;
+            justify-content: end;
+        }
+
+        .locate {
+            margin-top: 10px;
+        }
+
+        .right-arrow {
+            margin-right: 10px;
+        }
+
+        #social {
+            margin-top: 20px;
+        }
+
+        .link-div {
+            margin-top: 10px;
+        }
+
+        .link-img {
+            margin-right: 10px;
+        }
+
+
+        .navRedirect {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .navRedirect>img {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+<!-- Animated Square -->
+<ul id="animated-square-container">
+    <li class="animated-bg-square"></li>
+    <li class="animated-bg-square"></li>
+    <li class="animated-bg-square"></li>
+    <li class="animated-bg-square"></li>
+    <li class="animated-bg-square"></li>
+    <li class="animated-bg-square"></li>
+</ul>
+
+<!-- Nav Bar -->
+<ul id="links">
+    <div id="locaters">
+        <div class="locate">
+            <a href="/index.html" class="navRedirect">
+                <img class='right-arrow' src='assets/next.png'>
+                <li class="link-text">home</li>
+            </a>
+        </div>
+        <div class="locate">
+            <a href="/personality.html" class="navRedirect">
+                <img class='right-arrow' src='assets/next.png'>
+                <li class="link-text">personality</li>
+            </a>
+        </div>
+        <div class="locate">
+            <a href="/professional.html" class="navRedirect">
+                <img class='right-arrow' src='assets/next.png'>
+                <li class="link-text">professional</li>
+            </a>
+        </div>
+        <div class="locate">
+            <a href="/personalDev.html" class="navRedirect">
+                <img class='right-arrow' src='assets/next.png'>
+                <li class="link-text">personal development</li>
+            </a>
+        </div>
+        <div class="locate">
+            <a href="/storyboard.html" class="navRedirect">
+                <img class='right-arrow' src='assets/next.png'>
+                <li class="link-text">storyboard</li>
+            </a>
+        </div>
+        <div class="locate">
+            <a href="/references.html" class="navRedirect">
+                <img class='right-arrow' src='assets/next.png'>
+                <li class="link-text">references</li>
+            </a>
+        </div>
+    </div>
+    <div id="social">
+        <div class="link-div">
+            <a class="navRedirect" href="https://vsco.co/justiinb/gallery" target="_blank">
+                <img class='link-img' id='vsco-img' src='assets/vsco.png'>
+                <li id="vsco" class='link-text' id="vsco-text">vsco</li>
+            </a>
+        </div>
+        <div class="link-div">
+            <a class="navRedirect" href="#">
+                <img class='link-img' src="assets/snapchat.png">
+                <li class='link-text'>snapchat</li>
+            </a>
+        </div>
+        <div class="link-div">
+            <a class="navRedirect" href="https://www.instagram.com/justinn.tm/" target="_blank">
+                <img class='link-img' src='assets/instagram.png'>
+                <li class='link-text'>instagram</li>
+            </a>
+        </div>
+    </div>
+</ul>
+
+</body>
+</html>

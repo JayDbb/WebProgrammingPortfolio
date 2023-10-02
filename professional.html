@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Professional</title>
+</head>
+<body>
+        <style>
+        :root {
+            --primary: #1E2D2F;
+            --second: #DDF8E8;
+            --teri: #C57B57;
+        }
+
+        ::selection{
+            color: var(--primary);
+            background-color: var(--second);
+        }
+
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: var(--primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--second);
+            border-radius: 4px;
+        }
+
+        /* Import Custom Font */
+        @font-face {
+            font-family: 'EuclidCircularA-Bold';
+            src: url('assets/Euclid Circular A Bold.ttf');
+        }
+
+        body {
+            font-family: 'EuclidCircularA-Bold';
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--second);
+            transition: all .5s;
+        }
+
+        a:hover {
+            cursor: pointer;
+            color: var(--teri);
+            transition: all .5s;
+        }
+
+        p{
+            font-size: 3vh;
+            margin-top: -2vh;
+            word-wrap: normal;
+            line-height: 2em;
+            text-align: justify;
+        }
+        
+        h1{
+            font-size: 2.1vw;
+            color: var(--second);
+            margin-right: 10vw;
+        }
+
+        h2{
+            font-size: 1.6vw;
+            color: var(--second);
+            margin-bottom: 35px;
+        }
+
+        li {
+            margin-bottom: 1.5vh;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Nav Styling */
+
+        #links {
+            position: relative;
+            z-index: 3;
+            list-style: none;
+            flex-direction: column;
+            position: fixed;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin-top: -50vh;
+            left: 83%;
+            justify-content: end;
+        }
+
+        .locate {
+            margin-top: 10px;
+        }
+
+        .right-arrow {
+            margin-right: 10px;
+        }
+
+        #social {
+            margin-top: 20px;
+        }
+
+        .link-div {
+            margin-top: 10px;
+        }
+
+        .link-img {
+            margin-right: 10px;
+        }
+
+
+        .navRedirect {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .navRedirect>img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Animated Square */
+
+        @keyframes floatingSpin {
+            0%{
+                opacity: 0;
+                rotate: 0deg;
+                bottom: 0vh;
+
+            }
+            10%{
+                opacity: .6;
+            }
+            90%{
+                opacity: .6;
+            }
+            100%{
+                opacity: 0;
+                rotate: 360deg;
+                bottom: 300vh;
+            }
+
+        }
+
+        .animated-bg-square{
+            width: 20px ;
+            height: 20px ;
+            background-color: var(--second);
+            position: absolute;
+            list-style: none;
+            border-radius: 8px;
+            animation: floatingSpin 3s ease-in-out infinite both;
+            
+        }
+
+        #animated-square-container{
+            height: 100vh;
+            position: absolute;
+            top:160vh;
+            display: flex;
+            margin-top: 30vh;
+            align-items: end;
+            z-index: 0;
+        }
+        
+        #animated-square-container > li{
+            margin-bottom: 0px;
+
+        }
+
+        .animated-bg-square:nth-child(1){
+            margin-left: 0vw;
+            width: 100px;
+            height: 100px;
+            animation-delay: 1s;
+            animation-duration: 5s;
+
+        }
+
+        .animated-bg-square:nth-child(2){
+            margin-left: 80vw;
+            width: 120px;
+            height: 120px;
+            animation-delay: 3s;
+            animation-duration: 6s;
+
+
+        }
+
+        .animated-bg-square:nth-child(3){
+            margin-left: 60vw;
+            width: 10px;
+            height: 10px;
+            animation-delay: 5s;
+            animation-duration: 3s;
+            border-radius: 2px;
+
+
+        }
+
+        .animated-bg-square:nth-child(4){
+            margin-left: 40vw;
+            width: 200px;
+            height: 200px;
+            animation-delay: 3s;
+            animation-duration: 9s;
+
+        }
+
+        .animated-bg-square:nth-child(5){
+            margin-left: 20vw;
+            width: 70px;
+            height: 70px;
+            animation-delay: 8s;
+            animation-duration: 4s;
+            
+        }
+
+        .animated-bg-square:nth-child(6){
+            margin-left: 10vw;
+            width: 30px;
+            height: 30px;
+            animation-delay: 6s;
+            animation-duration: 3s;
+
+        }
+
+
+        /* Style for Hero */
+        #me-info {
+            margin-top: 30vh;
+            margin-left: 13vw;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        #waz-here {
+            display: flex;
+            font-size: 7vh;
+            margin-top: -0px;
+            margin-bottom: 20px;
+            color: var(--second);
+            margin-right: 35vw;
+
+        }
+
+        #heroTextContainer {
+            margin-right: 10%;
+            padding: 0px;
+            display: flex;
+            position: relative;
+            z-index: 1;
+        
+        }
+
+        #academic-container{
+            width: 45vw;
+        }
+
+        #academic-sub-container{
+            width: 45vw;
+        }
+
+        #academic-container > img{
+            border-radius: 8px;
+            position: relative;
+            z-index: 3;
+        }
+
+
+        </style>
+
+        <!-- Animated Squares -->
+        <ul id="animated-square-container">
+            <li class="animated-bg-square"></li>
+            <li class="animated-bg-square"></li>
+            <li class="animated-bg-square"></li>
+            <li class="animated-bg-square"></li>
+            <li class="animated-bg-square"></li>
+            <li class="animated-bg-square"></li>
+        </ul>
+    
+        <!-- Nav Bar -->
+    <ul id="links">
+        <div id="locaters">
+            <div class="locate">
+                <a href="/index.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">home</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/personality.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">personality</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/professional.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">professional</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/personalDev.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">personal development</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/storyboard.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">storyboard</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/references.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">references</li>
+                </a>
+            </div>
+        </div>
+        <div id="social">
+            <div class="link-div">
+                <a class="navRedirect" href="https://vsco.co/justiinb/gallery" target="_blank">
+                    <img class='link-img' id='vsco-img' src='assets/vsco.png'>
+                    <li id="vsco" class='link-text' id="vsco-text">vsco</li>
+                </a>
+            </div>
+            <div class="link-div">
+                <a class="navRedirect" href="#">
+                    <img class='link-img' src="assets/snapchat.png">
+                    <li class='link-text'>snapchat</li>
+                </a>
+            </div>
+            <div class="link-div">
+                <a class="navRedirect" href="https://www.instagram.com/justinn.tm/" target="_blank">
+                    <img class='link-img' src='assets/instagram.png'>
+                    <li class='link-text'>instagram</li>
+                </a>
+            </div>
+        </div>
+    </ul>
+    
+        <!-- Hero -->
+        <section id="me-info">
+            <div id="heroTextContainer">
+                <h1 id="waz-here">Justin as a Professional.</h1>
+            </div>
+    
+            <div id="academic-container">
+                <h1>My Resume</h1>
+                <img src="assets/resume.png" />
+            </div>
+            <div id="academic-sub-container">
+                <h1>My Vision</h1>
+                <p>To create enough wealth that will serve myself and generations to come. </p>
+            </div>
+    
+            <div id="academic-container">
+                <h1>My Mission</h1>
+                <p>To introduce, at a higher level, technology to Jamaica; aiding in emending the quality of life.</p>
+            </div>
+    
+            <div id="academic-container">
+                <h1>Future Career Requirements for a Software Engineer</h1>
+                <p>One needs strong written, verbal communication and interpersonal skills.
+                    Along with, creative problem-solving skills and experience managing the software development lifecycle.
+                    The ability to prioritize activities and deliver projects on time and within budget while working with clients and business partners.
+                    A comprehensive understanding of computer science concepts and excellent coding skills.</p>
+            </div>
+        </section>
+    
+</body>
+</html>

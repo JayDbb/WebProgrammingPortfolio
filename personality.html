@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Personality</title>
+</head>
+<body>
+
+    <style>
+                :root {
+            --primary: #1E2D2F;
+            --second: #DDF8E8;
+            --teri: #C57B57;
+        }
+
+        ::selection{
+            color: var(--primary);
+            background-color: var(--second);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: var(--primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--second);
+            border-radius: 4px;
+        }
+
+        @keyframes rotate {
+            0%,100%{
+                rotate: 0deg;
+                border-radius: 8px;
+            }
+            50%{
+                rotate: 180deg;
+                border-radius: 0px;
+                transform: scale(0);
+            }
+        }
+
+        /* Import Custom Font */
+        @font-face {
+            font-family: 'EuclidCircularA-Bold';
+            src: url('assets/Euclid Circular A Bold.ttf');
+        }
+
+        body {
+            font-family: 'EuclidCircularA-Bold';
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        p{
+            font-size: 3vh;
+            margin-top: -2vh;
+            word-wrap: normal;
+            line-height: 2em;
+            text-align: justify;
+        }
+        
+        h1{
+            font-size: 2.1vw;
+            color: var(--second);
+        }
+
+        h2{
+            font-size: 1.6vw;
+            color: var(--second);
+            margin-bottom: 35px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--second);
+            transition: all .5s;
+        }
+
+        a:hover {
+            cursor: pointer;
+            color: var(--teri);
+            transition: all .5s;
+        }
+
+        li {
+            margin-bottom: 1.5vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Nav Styling */
+
+        #links {
+            position: relative;
+            z-index: 3;
+            list-style: none;
+            flex-direction: column;
+            position: fixed;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin-top: -50vh;
+            left: 83%;
+            justify-content: end;
+        }
+
+        .locate {
+            margin-top: 10px;
+        }
+
+        .right-arrow {
+            margin-right: 10px;
+        }
+
+        #social {
+            margin-top: 20px;
+        }
+
+        .link-div {
+            margin-top: 10px;
+        }
+
+        .link-img {
+            margin-right: 10px;
+        }
+
+
+        .navRedirect {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .navRedirect>img {
+            width: 20px;
+            height: 20px;
+        }
+
+        
+        /* Animated Square */
+
+        @keyframes floatingSpin {
+            0%{
+                opacity: 0;
+                rotate: 0deg;
+                bottom: 0vh;
+
+            }
+            10%{
+                opacity: .6;
+            }
+            90%{
+                opacity: .6;
+            }
+            100%{
+                opacity: 0;
+                rotate: 360deg;
+                bottom: 650vh;
+            }
+
+        }
+
+        .animated-bg-square{
+            width: 20px ;
+            height: 20px ;
+            background-color: var(--second);
+            position: absolute;
+            list-style: none;
+            border-radius: 8px;
+            animation: floatingSpin 3s ease-in-out infinite both;
+            
+        }
+
+        #animated-square-container{
+            height: 100vh;
+            position: absolute;
+            top:300vh;
+            display: flex;
+            margin-top: 30vh;
+            align-items: end;
+            z-index: 0;
+        }
+        
+        #animated-square-container > li{
+            margin-bottom: 0px;
+
+        }
+
+        .animated-bg-square:nth-child(1){
+            margin-left: 0vw;
+            width: 100px;
+            height: 100px;
+            animation-delay: 1s;
+            animation-duration: 8s;
+
+        }
+
+        .animated-bg-square:nth-child(2){
+            margin-left: 80vw;
+            width: 120px;
+            height: 120px;
+            animation-delay: 3s;
+            animation-duration: 9s;
+
+
+        }
+
+        .animated-bg-square:nth-child(3){
+            margin-left: 60vw;
+            width: 10px;
+            height: 10px;
+            animation-delay: 5s;
+            animation-duration: 6s;
+            border-radius: 2px;
+
+
+        }
+
+        .animated-bg-square:nth-child(4){
+            margin-left: 40vw;
+            width: 200px;
+            height: 200px;
+            animation-delay: 3s;
+            animation-duration: 12s;
+
+        }
+
+        .animated-bg-square:nth-child(5){
+            margin-left: 20vw;
+            width: 70px;
+            height: 70px;
+            animation-delay: 8s;
+            animation-duration: 7s;
+            
+        }
+
+        .animated-bg-square:nth-child(6){
+            margin-left: 10vw;
+            width: 30px;
+            height: 30px;
+            animation-delay: 6s;
+            animation-duration: 6s;
+
+        }
+
+        /* Style for Hero */
+        #me-info {
+            margin-top: 30vh;
+            margin-left: 13vw;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        #waz-here {
+            display: flex;
+            font-size: 7vh;
+            margin-top: -0px;
+            margin-bottom: 20px;
+            color: var(--second);
+            margin-right: 35vw;
+
+        }
+
+        #heroTextContainer {
+            margin-right: 10%;
+            padding: 0px;
+            display: flex;
+            position: relative;
+            z-index: 1;
+        
+        }
+
+        #academic-container{
+            width: 45vw;
+        }
+
+        #academic-sub-container{
+            width: 45vw;
+        }
+
+        #academic-container > img{
+            border-radius: 8px;
+        }
+
+
+    </style>
+    
+    <!-- Animated Squares -->
+    <ul id="animated-square-container">
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+    </ul>
+
+    <!-- Nav Bar -->
+    <ul id="links">
+        <div id="locaters">
+            <div class="locate">
+                <a href="/index.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">home</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/personality.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">personality</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/professional.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">professional</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/personalDev.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">personal development</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/storyboard.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">storyboard</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/references.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">references</li>
+                </a>
+            </div>
+        </div>
+        <div id="social">
+            <div class="link-div">
+                <a class="navRedirect" href="https://vsco.co/justiinb/gallery" target="_blank">
+                    <img class='link-img' id='vsco-img' src='assets/vsco.png'>
+                    <li id="vsco" class='link-text' id="vsco-text">vsco</li>
+                </a>
+            </div>
+            <div class="link-div">
+                <a class="navRedirect" href="#">
+                    <img class='link-img' src="assets/snapchat.png">
+                    <li class='link-text'>snapchat</li>
+                </a>
+            </div>
+            <div class="link-div">
+                <a class="navRedirect" href="https://www.instagram.com/justinn.tm/" target="_blank">
+                    <img class='link-img' src='assets/instagram.png'>
+                    <li class='link-text'>instagram</li>
+                </a>
+            </div>
+        </div>
+    </ul>
+
+    <!-- Hero Page -->
+    <section id="me-info">
+        <div id="heroTextContainer">
+            <h1 id="waz-here">How did Justin become Justin?</h1>
+        </div>
+
+        <div id="academic-container">
+            <h1>Academic Life</h1>
+            <p>I was not always a good student. To this day I can't say what happened that caused the change, but in the 9th grade (during covid) is when my grades started to pick up pace,  <a href="#my-hero" style="color: #1E2D2F; background-color: #DDF8E8;">my hero</a> is also to be thanked as he supported me. Around this time is when I really started to find a interest in programming.</p>
+        </div>
+        <div id="academic-sub-container">
+            <h2>My Addictive Personality</h2>
+            <p>My addictive personality trait caused me to focus on programming allowing  me to learn multifarious programming concepts. Along with that, my addiction to programming lead me to watch day in the life of people who program for a living. <span style="color: var(--second);">Seeing the people live my dream fueled my hunger to do well so I could live that life.</span> So I believe that my addictive personality and hobby inadvertently impacted my school life.</p>
+        </div>
+
+        <div id="academic-container">
+            <h1 id="my-hero">My Hero</h1>
+            <p>My hero would have to be my father.  Reason being he is a quintessential example of what a man should be as a father, a husband, a worker and a generally good person. I chose him because I want to be like him when I grow up. One thing he always says that sticks with me is “Nobody is coming”. What I understand it to mean is that this world is very selfish and you have to be able to support yourself as little to nobody is coming to you're rescue, friends or family, so you must work smart and make reasonable life choices.</p>
+        </div>
+
+        <div id="academic-container">
+            <h1>My Personality Results</h1>
+            <img src="assets\personalityResult.png" >
+            <br>
+            <br>
+            <br>
+            <h2>Validity In General</h2>
+            <p>I believe that the test was a bit vague in it's line of questioning because different situations of similar context unearth different aspects of someone's personality. Along with that, The list of options were limiting, not allowing the interviewee to fully express what they think is the answer. So consequently, I don't believe the test has alot of validity to it. </p>
+            <h2>Validity In My Result</h2>
+            <p>
+                As for my individual case, being labeled an "Idealist" reflects how I perceive myself at this moment. However, I recognize that personalities can change over time, and this result might not capture all aspects of who I am. It's a helpful perspective, but I'll take it with some skepticism and consider seeking professional guidance for a more in-depth understanding of my personality.
+            </p>
+        </div>
+    </section>
+
+
+</body>
+</html>

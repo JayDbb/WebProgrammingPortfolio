@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Storyboard</title>
+</head>
+
+<body>
+    <style>
+        :root {
+            --primary: #1E2D2F;
+            --second: #DDF8E8;
+            --teri: #C57B57;
+        }
+
+        ::selection {
+            color: var(--primary);
+            background-color: var(--second);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: var(--primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--second);
+            border-radius: 4px;
+        }
+
+        @keyframes rotate {
+
+            0%,
+            100% {
+                rotate: 0deg;
+                border-radius: 8px;
+            }
+
+            50% {
+                rotate: 180deg;
+                border-radius: 0px;
+                transform: scale(0);
+            }
+        }
+
+        /* Import Custom Font */
+        @font-face {
+            font-family: 'EuclidCircularA-Bold';
+            src: url('assets/Euclid Circular A Bold.ttf');
+        }
+
+        body {
+            font-family: 'EuclidCircularA-Bold';
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        li {
+            margin-bottom: 1.5vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        img {
+            height: 500px;
+            width: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--second);
+            transition: all .5s;
+        }
+
+        a:hover {
+            cursor: pointer;
+            color: var(--teri);
+            transition: all .5s;
+        }
+
+        p{
+            font-size: 3vh;
+            margin-top: -2vh;
+            word-wrap: normal;
+            line-height: 2em;
+            text-align: justify;
+        }
+
+
+        h1 {
+            font-size: 2.1vw;
+            color: var(--second);
+            margin-right: 10vw;
+        }
+
+        h2 {
+            font-size: 1.6vw;
+            color: var(--second);
+            margin-bottom: 35px;
+        }
+
+        /* Nav Styling */
+
+        #links {
+            position: relative;
+            z-index: 3;
+            list-style: none;
+            flex-direction: column;
+            position: fixed;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin-top: -50vh;
+            left: 83%;
+            justify-content: end;
+        }
+
+        .locate {
+            margin-top: 10px;
+        }
+
+        .right-arrow {
+            margin-right: 10px;
+        }
+
+        #social {
+            margin-top: 20px;
+        }
+
+        .link-div {
+            margin-top: 10px;
+        }
+
+        .link-img {
+            margin-right: 10px;
+        }
+
+
+        .navRedirect {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .navRedirect>img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Animated Squares */
+
+        @keyframes floatingSpin {
+            0% {
+                opacity: 0;
+                rotate: 0deg;
+                bottom: 0vh;
+
+            }
+
+            10% {
+                opacity: .6;
+            }
+
+            90% {
+                opacity: .6;
+            }
+
+            100% {
+                opacity: 0;
+                rotate: 360deg;
+                bottom: 250vh;
+            }
+
+        }
+
+        .animated-bg-square {
+            width: 20px;
+            height: 20px;
+            background-color: var(--second);
+            position: absolute;
+            list-style: none;
+            border-radius: 8px;
+            animation: floatingSpin 3s ease-in-out infinite both;
+
+        }
+
+        #animated-square-container {
+            height: 100vh;
+            position: absolute;
+            top: 100vh;
+            display: flex;
+            margin-top: 30vh;
+            align-items: end;
+            z-index: 0;
+        }
+
+        #animated-square-container>li {
+            margin-bottom: 0px;
+
+        }
+
+        .animated-bg-square:nth-child(1) {
+            margin-left: 0vw;
+            width: 100px;
+            height: 100px;
+            animation-delay: 1s;
+            animation-duration: 5s;
+
+        }
+
+        .animated-bg-square:nth-child(2) {
+            margin-left: 80vw;
+            width: 120px;
+            height: 120px;
+            animation-delay: 3s;
+            animation-duration: 6s;
+
+
+        }
+
+        .animated-bg-square:nth-child(3) {
+            margin-left: 60vw;
+            width: 10px;
+            height: 10px;
+            animation-delay: 5s;
+            animation-duration: 3s;
+            border-radius: 2px;
+
+
+        }
+
+        .animated-bg-square:nth-child(4) {
+            margin-left: 40vw;
+            width: 200px;
+            height: 200px;
+            animation-delay: 3s;
+            animation-duration: 9s;
+
+        }
+
+        .animated-bg-square:nth-child(5) {
+            margin-left: 20vw;
+            width: 70px;
+            height: 70px;
+            animation-delay: 8s;
+            animation-duration: 4s;
+
+        }
+
+        .animated-bg-square:nth-child(6) {
+            margin-left: 10vw;
+            width: 30px;
+            height: 30px;
+            animation-delay: 6s;
+            animation-duration: 3s;
+
+        }
+
+        /* Hero */
+        #me-info {
+            margin-top: 30vh;
+            margin-left: 13vw;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        #waz-here {
+            display: flex;
+            font-size: 7vh;
+            margin-top: -0px;
+            margin-bottom: 20px;
+            color: var(--second);
+            margin-right: 35vw;
+
+        }
+
+        #heroTextContainer {
+            margin-right: 10%;
+            padding: 0px;
+            display: flex;
+            position: relative;
+            z-index: 1;
+
+        }
+
+        /* images - content */
+        #parentDiv {
+            display: flex;
+            flex-direction: column;
+            width: 40vw;
+        }
+
+        .childDiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .contentContainer {
+            margin-right: 90px;
+        }
+
+        .contentContainer>img {
+            border-radius: 8px;
+        }
+
+        #personal {
+            height: 1000px;
+        }
+
+        #pageConatin>ul {
+            list-style: circle;
+            font-size: 1.2vw;
+        }
+
+        .inner-list {
+            list-style: inside;
+            width: 40%;
+        }
+
+        #themeContain{
+            width: 45vw;
+        }
+    </style>
+
+    <!-- Animated Squares -->
+    <ul id="animated-square-container">
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+    </ul>
+
+    <!-- Nav Bar -->
+    <ul id="links">
+        <div id="locaters">
+            <div class="locate">
+                <a href="/index.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">home</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/personality.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">personality</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/professional.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">professional</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/personalDev.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">personal development</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/storyboard.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">storyboard</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="/references.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">references</li>
+                </a>
+            </div>
+        </div>
+        <div id="social">
+            <div class="link-div">
+                <a class="navRedirect" href="https://vsco.co/justiinb/gallery" target="_blank">
+                    <img class='link-img' id='vsco-img' src='assets/vsco.png'>
+                    <li id="vsco" class='link-text' id="vsco-text">vsco</li>
+                </a>
+            </div>
+            <div class="link-div">
+                <a class="navRedirect" href="#">
+                    <img class='link-img' src="assets/snapchat.png">
+                    <li class='link-text'>snapchat</li>
+                </a>
+            </div>
+            <div class="link-div">
+                <a class="navRedirect" href="https://www.instagram.com/justinn.tm/" target="_blank">
+                    <img class='link-img' src='assets/instagram.png'>
+                    <li class='link-text'>instagram</li>
+                </a>
+            </div>
+        </div>
+    </ul>
+
+    <!-- Hero -->
+    <section id="me-info">
+        <div id="heroTextContainer">
+            <h1 id="waz-here">The Storyboard.</h1>
+        </div>
+        <div id="pageConatin">
+            <a href="https://jaydbb.github.io/WebProgrammingPortfolio"><h1>Link To Website.</h1></a>
+            <h1>The Pages.</h1>
+            <ul>
+                <li>Index (Home)</li>
+                <ul class="inner-list">
+                    <li>Used For the Introduction Of Justin, showcasing his likes and dislike and knowledge.</li>
+                </ul>
+                <li>Personality</li>
+                <ul class="inner-list">
+                    <li>Used to tell the viewer the inner being of Justin and who he admires and what Justin is like as a person.</li>
+                </ul>
+                <li>Professional</li>
+                <ul class="inner-list">
+                    <li>Used to show the viewer the mission and vision of Justin, his resume and dream career.</li>
+                </ul>
+                <li>Personal Development</li>
+                <ul class="inner-list">
+                    <li>Used to tell the viewer about the book 12 pillars along with Justin's skills.</li>
+                </ul>
+                <li>Storyboard</li>
+                <ul class="inner-list">
+                    <li>Used to describe the use of each page of this website, the theme, along with showing the thought process via wireframes.</li>
+                </ul>
+                <li>References</li>
+                <ul class="inner-list">
+                    <li>Used to give credit to all the resources Justin used on this project.</li>
+                </ul>
+            </ul>
+        </div>
+        <div id="themeContain">
+
+            <h1>The Theme</h1>
+            <p>This website has a modern minimalistic theme, the colors used suggest a balance of professionalism and calmness (from <span style="color: #1E2D2F;background-color: #DDF8E8;">the primary</span> and <span style="color: var(--second);">secondary colors</span>) with a touch of warmth and approachability (<span style="color: #C57B57;">from the tertiary color</span>). The target audience of this website people who are seeking new hires and those who would like to know more about Justin.</p>
+            <p>The features used:</p>
+            <ul id="pageConatin">
+                <li>Animations</li>
+                <li>Images</li>
+                <li>External Links</li>
+                <li>Internal Links</li>
+            </ul>  
+        </div>
+        <h1 style="margin-bottom: 10px;">The Wireframes.</h1>
+        <div id="parentDiv">
+            <div class="childDiv">
+                <div class="contentContainer">
+                    <h2>Home</h2>
+                    <img src="assets\homeWire.jpeg" />
+                </div>
+                <div class="contentContainer">
+                    <h2>Personality</h2>
+                    <img src="assets\personalWire.jpeg" />
+                </div>
+            </div>
+            <div class="childDiv">
+                <div class="contentContainer">
+                    <h2>Professional</h2>
+                    <img src="assets\profWire.jpeg" />
+                </div>
+                <div class="contentContainer">
+                    <h2>Storyboard</h2>
+                    <img src="assets\storyWire.jpeg" />
+                </div>
+            </div>
+            <div class="childDiv">
+                <div class="contentContainer">
+                    <h2>References</h2>
+                    <img src="assets\profWire.jpeg" />
+                </div>
+                <div class="contentContainer">
+                    <h2>Personal Development</h2>
+                    <img id="personal" src="assets\personalDev.jpeg" />
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+</body>
+
+</html>
