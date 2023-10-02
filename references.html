@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <style>
-                :root {
+        :root {
             --primary: #1E2D2F;
             --second: #DDF8E8;
             --teri: #C57B57;
@@ -53,6 +55,7 @@
             font-family: 'EuclidCircularA-Bold';
             background-color: var(--primary);
             color: #fff;
+            overflow-y: hidden;
         }
 
         li {
@@ -80,7 +83,7 @@
             transition: all .5s;
         }
 
-        p{
+        p {
             font-size: 3vh;
             margin-top: -2vh;
             word-wrap: normal;
@@ -147,78 +150,237 @@
             width: 20px;
             height: 20px;
         }
-    </style>
-<!-- Animated Square -->
-<ul id="animated-square-container">
-    <li class="animated-bg-square"></li>
-    <li class="animated-bg-square"></li>
-    <li class="animated-bg-square"></li>
-    <li class="animated-bg-square"></li>
-    <li class="animated-bg-square"></li>
-    <li class="animated-bg-square"></li>
-</ul>
 
-<!-- Nav Bar -->
-<ul id="links">
-    <div id="locaters">
-        <div class="locate">
-            <a href="/index.html" class="navRedirect">
-                <img class='right-arrow' src='assets/next.png'>
-                <li class="link-text">home</li>
-            </a>
+        /* Animated Square */
+
+        @keyframes floatingSpin {
+            0% {
+                opacity: 0;
+                rotate: 0deg;
+                bottom: 0vh;
+
+            }
+
+            10% {
+                opacity: .6;
+            }
+
+            90% {
+                opacity: .6;
+            }
+
+            100% {
+                opacity: 0;
+                rotate: 360deg;
+                bottom: 800vh;
+            }
+
+        }
+
+        .animated-bg-square {
+            width: 20px;
+            height: 20px;
+            background-color: var(--second);
+            position: absolute;
+            list-style: none;
+            border-radius: 8px;
+            animation: floatingSpin 3s ease-in-out infinite both;
+
+        }
+
+        #animated-square-container {
+            height: 100vh;
+            position: absolute;
+            top: 100vh;
+            display: flex;
+            margin-top: 30vh;
+            align-items: end;
+            z-index: 0;
+        }
+
+        #animated-square-container>li {
+            margin-bottom: 0px;
+
+        }
+
+        .animated-bg-square:nth-child(1) {
+            margin-left: 0vw;
+            width: 100px;
+            height: 100px;
+            animation-delay: 1s;
+            animation-duration: 8s;
+
+        }
+
+        .animated-bg-square:nth-child(2) {
+            margin-left: 80vw;
+            width: 120px;
+            height: 120px;
+            animation-delay: 3s;
+            animation-duration: 9s;
+
+
+        }
+
+        .animated-bg-square:nth-child(3) {
+            margin-left: 60vw;
+            width: 10px;
+            height: 10px;
+            animation-delay: 5s;
+            animation-duration: 6s;
+            border-radius: 2px;
+
+
+        }
+
+        .animated-bg-square:nth-child(4) {
+            margin-left: 40vw;
+            width: 200px;
+            height: 200px;
+            animation-delay: 3s;
+            animation-duration: 12s;
+
+        }
+
+        .animated-bg-square:nth-child(5) {
+            margin-left: 20vw;
+            width: 70px;
+            height: 70px;
+            animation-delay: 8s;
+            animation-duration: 7s;
+
+        }
+
+        .animated-bg-square:nth-child(6) {
+            margin-left: 10vw;
+            width: 30px;
+            height: 30px;
+            animation-delay: 6s;
+            animation-duration: 6s;
+
+        }
+
+        /* Style for Hero */
+        #me-info {
+            margin-top: 30vh;
+            margin-left: 13vw;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        #waz-here {
+            display: flex;
+            font-size: 7vh;
+            margin-top: -0px;
+            margin-bottom: 20px;
+            color: var(--second);
+            margin-right: 35vw;
+
+        }
+
+        #heroTextContainer {
+            margin-right: 10%;
+            padding: 0px;
+            display: flex;
+            position: relative;
+            z-index: 1;
+
+        }
+    </style>
+    <!-- Animated Square -->
+    <ul id="animated-square-container">
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+        <li class="animated-bg-square"></li>
+    </ul>
+
+    <!-- Nav Bar -->
+    <ul id="links">
+        <div id="locaters">
+            <div class="locate">
+                <a href="WebProgrammingPortfolio/index.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">home</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="WebProgrammingPortfolio/personality.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">personality</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="WebProgrammingPortfolio/professional.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">professional</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="WebProgrammingPortfolio/personalDev.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">personal development</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="WebProgrammingPortfolio/storyboard.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">storyboard</li>
+                </a>
+            </div>
+            <div class="locate">
+                <a href="WebProgrammingPortfolio/references.html" class="navRedirect">
+                    <img class='right-arrow' src='assets/next.png'>
+                    <li class="link-text">references</li>
+                </a>
+            </div>
         </div>
-        <div class="locate">
-            <a href="/personality.html" class="navRedirect">
-                <img class='right-arrow' src='assets/next.png'>
-                <li class="link-text">personality</li>
-            </a>
+        <div id="social">
+            <div class="link-div">
+                <a class="navRedirect" href="https://vsco.co/justiinb/gallery" target="_blank">
+                    <img class='link-img' id='vsco-img' src='assets/vsco.png'>
+                    <li id="vsco" class='link-text' id="vsco-text">vsco</li>
+                </a>
+            </div>
+            <div class="link-div">
+                <a class="navRedirect" href="#">
+                    <img class='link-img' src="assets/snapchat.png">
+                    <li class='link-text'>snapchat</li>
+                </a>
+            </div>
+            <div class="link-div">
+                <a class="navRedirect" href="https://www.instagram.com/justinn.tm/" target="_blank">
+                    <img class='link-img' src='assets/instagram.png'>
+                    <li class='link-text'>instagram</li>
+                </a>
+            </div>
         </div>
-        <div class="locate">
-            <a href="/professional.html" class="navRedirect">
-                <img class='right-arrow' src='assets/next.png'>
-                <li class="link-text">professional</li>
-            </a>
+    </ul>
+
+    <section id="me-info">
+        <div id="heroTextContainer">
+            <h1 id="waz-here">My References.</h1>
         </div>
-        <div class="locate">
-            <a href="/personalDev.html" class="navRedirect">
-                <img class='right-arrow' src='assets/next.png'>
-                <li class="link-text">personal development</li>
-            </a>
-        </div>
-        <div class="locate">
-            <a href="/storyboard.html" class="navRedirect">
-                <img class='right-arrow' src='assets/next.png'>
-                <li class="link-text">storyboard</li>
-            </a>
-        </div>
-        <div class="locate">
-            <a href="/references.html" class="navRedirect">
-                <img class='right-arrow' src='assets/next.png'>
-                <li class="link-text">references</li>
-            </a>
-        </div>
-    </div>
-    <div id="social">
-        <div class="link-div">
-            <a class="navRedirect" href="https://vsco.co/justiinb/gallery" target="_blank">
-                <img class='link-img' id='vsco-img' src='assets/vsco.png'>
-                <li id="vsco" class='link-text' id="vsco-text">vsco</li>
-            </a>
-        </div>
-        <div class="link-div">
-            <a class="navRedirect" href="#">
-                <img class='link-img' src="assets/snapchat.png">
-                <li class='link-text'>snapchat</li>
-            </a>
-        </div>
-        <div class="link-div">
-            <a class="navRedirect" href="https://www.instagram.com/justinn.tm/" target="_blank">
-                <img class='link-img' src='assets/instagram.png'>
-                <li class='link-text'>instagram</li>
-            </a>
-        </div>
-    </div>
-</ul>
+
+
+        <ul>
+            <li>
+                Rohn, J. (n.d.). (PDF) <i>Twelve pillars</i>. dokumen.tips.
+                https://dokumen.tips/documents/twelve-pillars.html?page=1
+            </li>
+            <li>
+                <i>Keirsey temperament assessment</i>. Keirsey Temperament Assessment. (n.d.). https://www.keirsey.com/ 
+            </li>
+            <li>
+                Betterteam Ltd. (n.d.). <i>Software engineer job description - betterteam</i>. Software Engineer Job Description. <br>
+                <span style="margin-left: 20px;">https://www.betterteam.com/software-engineer-job-description </span>
+            </li>
+        </ul>
+    </section>
 
 </body>
+
 </html>
